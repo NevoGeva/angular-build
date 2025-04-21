@@ -1,0 +1,18 @@
+
+Desc: <input #desc>
+Price: <input #price type="number">
+
+<button (click)="addProduct(desc.value, +price.value)">Add</button>
+<br>
+<hr>
+
+<ol>
+    <li *ngFor="let prod of products">
+        <!-- {{prod.id}} -->
+        {{prod.desc}}
+        {{prod.price}}
+        {{prod.price|currencySign}}
+        <button (click)="delProduct(prod.id)">Delete Product</button>
+        <button (click)="updProduct({id:prod.id, desc:desc.value,price:+price.value})">Update Product</button>
+    </li>
+</ol>
